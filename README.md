@@ -1,13 +1,14 @@
-<<<<<<< HEAD
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-=======
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh.
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh.
+
+---
+
 # TOURIFY Project
 
 ## Description
@@ -36,7 +37,7 @@ Currently, two official plugins are available:
 ## Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/tourify.git
+    git clone https://github.com/TechnicalSages/Tourify.git
     ```
 2. Navigate into the project directory:
     ```bash
@@ -51,5 +52,4 @@ Currently, two official plugins are available:
 To run the project locally, use the following command:
 
 ```bash
-npm start
->>>>>>> d060b8e74eeaab8b8c17aba69da7a1efaa3fae05
+npm run dev
