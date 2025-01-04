@@ -5,7 +5,7 @@ function Header() {
     <div className="p-3 shadow-sm flex justify-between items-center px-5">
       <img src="./logo.svg" alt="" />
       <div>
-        <Button>Sign In</Button>
+        <Button variant = "secondary">Sign In</Button>
       </div>
     </div>
   )
