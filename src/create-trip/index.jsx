@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Input } from "@/components/ui/input";
 
 function CreateTrip() {
   const [query, setQuery] = useState("");
@@ -42,32 +43,44 @@ function CreateTrip() {
       <p className="mt-3 text-gray-500 text-xl">
         We need some basic information to generate a customized itinerary based on your preferences.
       </p>
-      
-      <div>
-        <h2 className="text-xl my-5 font-medium">What is the destination choice?</h2>
+
+      <div className="mt-20 flex flex-col gap-10">
         
-        {/* Input field for the place */}
-        <input
-          type="text"
-          value={query}
-          onChange={handleInputChange}
-          placeholder="Start typing a place..."
-          className="border p-2 w-full rounded mt-3"
-        />
+        {/* This is AUTOCOMOPLETE part*/}
+        <div>
+          <h2 className="text-xl my-5 font-medium">What is the destination choice?</h2>
+          
+          {/* Input field for the place */}
+          <input
+            type="text"
+            value={query}
+            onChange={handleInputChange}
+            placeholder="Start typing a place..."
+            className="border-2 p-2 w-full rounded mt-3" // Increased border size
+          />
+          
+          {/* Suggestions list without border and separator */}
+          <ul className="mt-2">
+            {suggestions.map((suggestion, index) => (
+              <li
+                key={index}
+                className="p-2 hover:bg-gray-200 cursor-pointer"
+                onClick={() => handleSuggestionClick(suggestion)}
+              >
+                {suggestion.properties.formatted}
+              </li>
+            ))}
+          </ul>
+        </div>
         
-        {/* Suggestions list */}
-        <ul className="border mt-2 rounded">
-          {suggestions.map((suggestion, index) => (
-            <li
-              key={index}
-              className="p-2 hover:bg-gray-200 cursor-pointer"
-              onClick={() => handleSuggestionClick(suggestion)}
-            >
-              {suggestion.properties.formatted}
-            </li>
-          ))}
-        </ul>
+        {/* This */}
+        <div>
+          <h2 className="text-xl my-5 font-medium">How many days are you planning for the trip?</h2>
+          <Input placeholder={'Ex.3'} type='number'/>
+        </div>
+
       </div>
+    
     </div>
   );
 }
