@@ -17,6 +17,7 @@ import axios from "axios";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "@/service/firebaseConfig";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 function CreateTrip() {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -24,7 +25,7 @@ function CreateTrip() {
   const [openDialog, setopenDialog] = useState(false);
   const [loading, setLoading] = useState(false);
   const API_KEY = "b971fc8a60a441568c30d6b4fedcf2e5";
-
+  const navigate = useNavigate();
   const fetchSuggestions = async (input) => {
     const url = `https://api.geoapify.com/v1/geocode/autocomplete?text=${input}&apiKey=${API_KEY}`;
 
@@ -123,6 +124,7 @@ function CreateTrip() {
       id: docId
     });
     setLoading(false);
+    navigate('/view-trip/' + docId);
   }
   return (
     <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-10">
