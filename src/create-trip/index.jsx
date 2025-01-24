@@ -32,6 +32,7 @@ function CreateTrip() {
     try {
       const response = await fetch(url);
       const data = await response.json();
+      console.log("respone is now", data);
       setSuggestions(data.features || []);
       console.log(data.features);
     } catch (error) {
