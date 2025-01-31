@@ -24,10 +24,9 @@ function CreateTrip() {
   const [formData, setformData] = useState([]);
   const [openDialog, setopenDialog] = useState(false);
   const [loading, setLoading] = useState(false);
-  const API_KEY = "b971fc8a60a441568c30d6b4fedcf2e5";
   const navigate = useNavigate();
   const fetchSuggestions = async (input) => {
-    const url = `https://api.geoapify.com/v1/geocode/autocomplete?text=${input}&apiKey=${API_KEY}`;
+    const url = `https://api.geoapify.com/v1/geocode/autocomplete?text=${input}&apiKey=${import.meta.env.VITE_API_KEY}`;
 
     try {
       const response = await fetch(url);
@@ -99,6 +98,7 @@ function CreateTrip() {
     setLoading(false);
     SaveAITrip(result.response?.text());
   }
+
   const getUserProfile = (tokenInfo) => {
     axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${tokenInfo?.access_token}`, {
       headers: {
@@ -113,6 +113,7 @@ function CreateTrip() {
       onGenerateTrip();
     })
   }
+
   const SaveAITrip = async (TripData) => {
 
     setLoading(true);

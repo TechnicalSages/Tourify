@@ -18,7 +18,6 @@ const InfoSection = ({ trip }) => {
         
         const response = await fetch(`https://api.unsplash.com/search/photos?query=${destination}&client_id=${import.meta.env.VITE_UNSPLASH_ACCESS_KEY}`);
         const data = await response.json();
-        console.log(data.results[0].urls)
         if (data.results.length > 0) {
             setImageUrl(data.results[0].urls.regular); // Set the first image
         }
