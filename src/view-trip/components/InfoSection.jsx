@@ -1,4 +1,5 @@
 //eslint-disable-next-line no-unused-vars
+import axios from 'axios';
 import React, {useState , useEffect} from 'react'
 import { FaShare } from 'react-icons/fa'
 import { Button } from "@/components/ui/button"; // Replace 'your-button-library' with the actual library name
@@ -14,10 +15,10 @@ const InfoSection = ({ trip }) => {
     }, [trip?.userSelection?.destination]);
 
     const fetchImage = async (destination) => {
-        const UNSPLASH_ACCESS_KEY = "ZETsUBNsgrDBbIjjlStFSt3ywPSJPLG6uuQL_3iddnk";
-        const response = await fetch(`https://api.unsplash.com/search/photos?query=${destination}&client_id=${UNSPLASH_ACCESS_KEY}`);
+        
+        const response = await fetch(`https://api.unsplash.com/search/photos?query=${destination}&client_id=${import.meta.env.VITE_UNSPLASH_ACCESS_KEY}`);
         const data = await response.json();
-
+        console.log(data.results[0].urls)
         if (data.results.length > 0) {
             setImageUrl(data.results[0].urls.regular); // Set the first image
         }
