@@ -26,7 +26,7 @@ function CreateTrip() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const fetchSuggestions = async (input) => {
-    const url = `https://api.geoapify.com/v1/geocode/autocomplete?text=${input}&apiKey=${import.meta.env.VITE_API_KEY}`;
+    const url = `https://api.geoapify.com/v1/geocode/autocomplete?text=${input}&apiKey=${import.meta.env.VITE_PLACE_API_KEY}`;
 
     try {
       const response = await fetch(url);
@@ -129,7 +129,7 @@ function CreateTrip() {
     navigate('/view-trip/' + docId);
   }
   return (
-    <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-10">
+    <div className=" mt-40 sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-10">
       <h2 className="font-bold text-3xl">Tell us your travel preferences 🏖️🌴</h2>
       <p className="mt-3 text-gray-500 text-xl">
         We need some basic information to generate a customized itinerary based on your preferences.

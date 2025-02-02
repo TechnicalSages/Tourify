@@ -28,7 +28,7 @@ const Viewtrip = () => {
         }
     }
     return (
-        <div className='p-10 md:px-20 lg:px-44 xl:px-56'>
+        <div className='mt-36 p-10 md:px-20 lg:px-44 xl:px-56'>
             {/* Information section */}
             {/* <img src="/travel_background.svg" alt="" /> */}
             <InfoSection trip={trip} />
