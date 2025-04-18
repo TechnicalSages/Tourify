@@ -27,6 +27,7 @@ const Viewtrip = () => {
             toast('no trip found');
         }
     }
+    console.log("trip is ", trip)
     return (
         <div className='mt-36 p-10 md:px-20 lg:px-44 xl:px-56'>
             {/* Information section */}
